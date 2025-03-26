@@ -3,8 +3,8 @@ import gspread
 import pandas as pd
 from google.oauth2.service_account import Credentials
 
-ključ = Credentials.from_service_account_info(st.secrets["gcp_service_account"])
-spajanje = gspread.authorize(ključ)
+creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"])
+spajanje = gspread.authorize(creds)
 list = spajanje.open('korisnici').sheet1
 
 st.title("Aplikacija za evidenciju korisnika")
