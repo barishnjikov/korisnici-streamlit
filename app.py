@@ -3,12 +3,12 @@ import gspread
 import pandas as pd
 from google.oauth2.service_account import Credentials
 
-scope = ["https://www.googleapis.com/auth/spreadsheets",
+područja = ["https://www.googleapis.com/auth/spreadsheets",
          "https://www.googleapis.com/auth/drive"]
 
 ključ = Credentials.from_service_account_info(
     st.secrets["gcp_service_account"],
-    scopes=scope
+    scopes=područja)
     
 spajanje = gspread.authorize(ključ)
 list = spajanje.open('korisnici').sheet1
